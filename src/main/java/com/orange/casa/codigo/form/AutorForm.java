@@ -30,6 +30,10 @@ public class AutorForm {
 		return new Autor(this.nome, this.email, this.descricao);
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
 	@Override
 	public String toString() {
 		return "AutorForm [nome=" + nome + ", email=" + email + ", descricao=" + descricao + "]";
