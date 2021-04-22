@@ -30,7 +30,7 @@ public class AutorController {
 	}
 	
 	@PostMapping
-	public String cria(@RequestBody @Valid AutorForm autorForm) {
+	public String criaAutor(@RequestBody @Valid AutorForm autorForm) {
 		
 		Autor autor = autorForm.converteAutor();
 		autorRepository.save(autor);

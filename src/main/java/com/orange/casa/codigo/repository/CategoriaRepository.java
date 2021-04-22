@@ -5,11 +5,13 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.orange.casa.codigo.Aluno.Autor;
+import com.orange.casa.codigo.Aluno.Categoria;
 
 @Repository
-public interface AutorRepository extends CrudRepository<Autor, Long> {
+public interface CategoriaRepository extends CrudRepository<Categoria, Long> {
 
-	Optional<Autor> findByEmail(String email);
+	Optional<Categoria> findByNome(String nome);
+
+	
 
 }
