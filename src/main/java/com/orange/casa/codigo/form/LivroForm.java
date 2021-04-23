@@ -42,6 +42,7 @@ public class LivroForm {
 	private Integer numPaginas;
 
 	@NotBlank
+	@UniqueValue(domainClass = Livro.class, fieldName = "isbn")
 	private String isbn;
 
 	@JsonFormat(pattern = "dd/MM/yyyy", shape = Shape.STRING)
@@ -68,6 +69,11 @@ public class LivroForm {
 		this.idCategoria = idCategoria;
 		this.idAutor = idAutor;
 	}
+	
+	
+	/* O SET FOI CIRADO NO INTUITO DE DESSERIALIZAR O LOCALDATE, QUE NÃO ESTAVA ACONTECENDO VIA CONSTRUTOR
+	 * A SOLUÇÃO QUE ENCONTREI FOI ATRAVÉS DO SET
+	 * */
 
 	public void setDataLancamento(LocalDate dataLancamento) {
 		this.dataLancamento = dataLancamento;
