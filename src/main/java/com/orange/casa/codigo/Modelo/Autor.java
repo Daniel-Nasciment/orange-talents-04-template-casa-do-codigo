@@ -1,4 +1,4 @@
-package com.orange.casa.codigo.Aluno;
+package com.orange.casa.codigo.Modelo;
 
 import java.time.LocalDateTime;
 

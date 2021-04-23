@@ -5,7 +5,8 @@ import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.orange.casa.codigo.Aluno.Autor;
+import com.orange.casa.codigo.Modelo.Autor;
+import com.orange.casa.codigo.validator.UniqueValue;
 
 public class AutorForm {
 
@@ -13,6 +14,7 @@ public class AutorForm {
 	private String nome;
 	@NotBlank
 	@Email
+	@UniqueValue(domainClass = Autor.class, fieldName = "email")
 	private String email;
 	@NotBlank
 	@Length(max = 400)

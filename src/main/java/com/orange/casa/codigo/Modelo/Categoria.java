@@ -1,4 +1,4 @@
-package com.orange.casa.codigo.Aluno;
+package com.orange.casa.codigo.Modelo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,9 +17,9 @@ public class Categoria {
 
 	@Deprecated
 	public Categoria() {
-		
+
 	}
-	
+
 	public Categoria(@NotBlank String nome) {
 		super();
 		this.nome = nome;
@@ -29,7 +29,5 @@ public class Categoria {
 	public String toString() {
 		return "Categoria [id=" + id + ", nome=" + nome + "]";
 	}
-	
-	
 
 }
