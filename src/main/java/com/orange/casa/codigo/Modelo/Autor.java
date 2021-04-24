@@ -31,7 +31,7 @@ public class Autor {
 
 	@Deprecated
 	public Autor() {
-		
+
 	}
 
 	public Autor(@NotBlank String nome, @NotBlank @Email String email, @NotBlank @Length(max = 400) String descricao) {
@@ -44,6 +44,26 @@ public class Autor {
 	@Override
 	public String toString() {
 		return "Autor [id=" + id + ", nome=" + nome + ", email=" + email + ", descricao=" + descricao + "]";
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public LocalDateTime getInstanteCriacao() {
+		return instanteCriacao;
 	}
 
 }

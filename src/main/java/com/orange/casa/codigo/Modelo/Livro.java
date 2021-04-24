@@ -19,7 +19,8 @@ import org.hibernate.validator.constraints.Length;
 @Entity
 public class Livro {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private @NotBlank String titulo;
 	private @NotBlank @Length(max = 500) String resumo;
@@ -28,19 +29,21 @@ public class Livro {
 	private @NotNull @Min(100) Integer numPaginas;
 	private @NotBlank String isbn;
 	private @Future @NotNull LocalDate dataLancamento;
-	@ManyToOne @NotNull
+	@ManyToOne
+	@NotNull
 	private Categoria categoria;
-	@ManyToOne @NotNull
+	@ManyToOne
+	@NotNull
 	private Autor autor;
-	
+
 	@Deprecated
-	private Livro() {
-		
+	public Livro() {
+
 	}
 
-	public Livro(@NotBlank String titulo, @NotBlank @Length(max = 500) String resumo, String sumario, @NotNull @Min(20) BigDecimal preco,
-			@NotNull @Min(100) Integer numPaginas, @NotBlank String isbn, @Future LocalDate dataLancamento,@NotNull @Valid Categoria categoria,
-			@NotNull @Valid Autor autor) {
+	public Livro(@NotBlank String titulo, @NotBlank @Length(max = 500) String resumo, String sumario,
+			@NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) Integer numPaginas, @NotBlank String isbn,
+			@Future LocalDate dataLancamento, @NotNull @Valid Categoria categoria, @NotNull @Valid Autor autor) {
 		this.titulo = titulo;
 		this.resumo = resumo;
 		this.sumario = sumario;
@@ -55,9 +58,33 @@ public class Livro {
 	public Long getId() {
 		return id;
 	}
-	
+
 	public String getTitulo() {
 		return titulo;
 	}
+
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public String getResumo() {
+		return resumo;
+	}
+
+	public String getSumario() {
+		return sumario;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public Integer getNumPaginas() {
+		return numPaginas;
+	} 
 
 }
