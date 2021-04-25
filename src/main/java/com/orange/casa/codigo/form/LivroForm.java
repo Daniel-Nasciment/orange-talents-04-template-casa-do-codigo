@@ -2,7 +2,6 @@ package com.orange.casa.codigo.form;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
@@ -69,11 +68,11 @@ public class LivroForm {
 		this.idCategoria = idCategoria;
 		this.idAutor = idAutor;
 	}
-	
-	
-	/* O SET FOI CIRADO NO INTUITO DE DESSERIALIZAR O LOCALDATE, QUE NÃO ESTAVA ACONTECENDO VIA CONSTRUTOR
-	 * A SOLUÇÃO QUE ENCONTREI FOI ATRAVÉS DO SET
-	 * */
+
+	/*
+	 * O SET FOI CIRADO NO INTUITO DE DESSERIALIZAR O LOCALDATE, QUE NÃO ESTAVA
+	 * ACONTECENDO VIA CONSTRUTOR A SOLUÇÃO QUE ENCONTREI FOI ATRAVÉS DO SET
+	 */
 
 	public void setDataLancamento(LocalDate dataLancamento) {
 		this.dataLancamento = dataLancamento;
