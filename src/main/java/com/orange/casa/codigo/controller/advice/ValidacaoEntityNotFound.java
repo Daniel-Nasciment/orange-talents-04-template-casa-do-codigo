@@ -1,5 +1,7 @@
 package com.orange.casa.codigo.controller.advice;
 
+import java.util.NoSuchElementException;
+
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.http.HttpStatus;
@@ -12,9 +14,14 @@ public class ValidacaoEntityNotFound {
 
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	@ExceptionHandler(EntityNotFoundException.class)
-	public String handle(EntityNotFoundException exception) {
+	public String bucaIdInvalido() {
 
 		return "URL não localizada.";
 	}
-
+	
+	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
+	@ExceptionHandler(NoSuchElementException.class)
+	public String cadastraClienteComIdPaisOuEstadoInvalido() {
+		return "ID de cidade e/ou estado não localizado.";
+	}
 }
